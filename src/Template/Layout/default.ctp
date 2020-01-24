@@ -209,15 +209,17 @@ pre {
 <body>
 <section class='container'>
 
-        <hgroup>
-           <h1>Welcome to your CakePHP application on OpenShift</h1>
-        </hgroup>
+        <center>
+		<h1> Ricardo de Magalhães Simões </h1>
+		<h2> Arquivo: "R:\GitHub\cakephp-rms\src\Template\Layout\default.ctp" </h2>
+		</center>
+		<hr>
+		<pre><?php echo "FILE: ".__FILE__; ?></pre><hr>
+		<pre><?php print_r($_SERVER); ?></pre><hr>
+		<hr>
 
         <?= $this->fetch('content') ?>
 
-        <footer>
-          <div class="logo"><a href="https://www.openshift.com/"></a></div>
-        </footer>
 </section>
 
 

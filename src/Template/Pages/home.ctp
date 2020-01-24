@@ -1,4 +1,13 @@
-        <div class="row">
+        <center>
+		<h1> Ricardo de Magalhães Simões </h1>
+		<h2> Arquivo: "R:\GitHub\cakephp-rms\src\Template\Pages\home.ctp" </h2>
+		</center>
+		<hr>
+		<pre><?php echo "FILE: ".__FILE__; ?></pre><hr>
+		<pre><?php print_r($_SERVER); ?></pre><hr>
+		<hr>
+		
+		<div class="row">
           <section class='col-xs-12 col-sm-6 col-md-6'>
             <section>
               <h2>How to use this example application</h2>
@@ -10,62 +19,18 @@
                   You can configure a webhook in your repository to make OpenShift automatically start a build whenever you push your code:
                 </p>
 
-<ol>
-  <li>From the Web Console homepage, navigate to your project</li>
-  <li>Click on Browse &gt; Builds</li>
-  <li>Click the link with your BuildConfig name</li>
-  <li>Click the Configuration tab</li>
-  <li>Click the "Copy to clipboard" icon to the right of the "GitHub webhook URL" field</li>
-  <li>Navigate to your repository on GitHub and click on repository settings &gt; webhooks &gt; Add webhook</li>
-  <li>Paste your webhook URL provided by OpenShift</li>
-  <li>Leave the defaults for the remaining fields &mdash; that's it!</li>
-</ol>
-<p>After you save your webhook, if you refresh your settings page you can see the status of the ping that Github sent to OpenShift to verify it can reach the server.</p>
-<p>Note: adding a webhook requires your OpenShift server to be reachable from GitHub.</p>
-
-                <h3>Working in your local Git repository</h3>
-                <p>If you forked the application from the OpenShift GitHub example, you'll need to manually clone the repository to your local system. Copy the application's source code Git URL and then run:</p>
-
-<pre>$ git clone &lt;git_url&gt; &lt;directory_to_create&gt;
-
-# Within your project directory
-# Commit your changes and push to OpenShift
-
-$ git commit -a -m 'Some commit message'
-$ git push</pre>
-
-<p>After pushing changes, you'll need to manually trigger a build if you did not setup a webhook as described above.</p>
-
-                  <h3>Expanding on sample app</h3>
-                  <p>
-                  In order to access the original CakePHP application, you must restore the original
-                  src/Template/Layout/default.ctp.default and src/Template/Pages/home.ctp.default files.
-                  </p>
-                  <p>
-                  It will also be necessary to update your application to talk to your database back-end.  The <code>config/app.php</code> file used by CakePHP was set up in such a way that it will accept environment variables for your connection information that you pass to it.
-                  Once an administrator has created a MySQL database service for you to connect with you can add the following environment variables to your deploymentConfig to ensure all your frontend pods have access to these environment variables.
-                  Note: the cakephp-mysql.json template creates the DB service and environment variables for you.
-
-<pre>
-oc env dc/cakephp-mysql-example DATABASE_SERVICE_NAME=&lt;database service name&gt;
-oc env dc/cakephp-mysql-example DATABASE_ENGINE=mysql
-oc env dc/cakephp-mysql-example DATABASE_NAME=&lt;your created database&gt;
-oc env dc/cakephp-mysql-example &lt;database service name&gt;_DATABASE_USER=&lt;your database user&gt;
-oc env dc/cakephp-mysql-example &lt;database service name&gt;_DATABASE_PASSWORD=&lt;your database user's password&gt;
-</pre>
-                  </p>
-                  <p>
-                  Note: If the database service is created in the same project as the frontend pod,
-                  the *_SERVICE_HOST and *_SERVICE_PORT environment variables will be automatically
-                  created.
-                  </p>
-                  <p>
-                  You will need to redeploy your application in order to pick up the new environment variables.  You can force a deployment
-                  by running:
-<pre>
-oc deploy cakephp-mysql-example --latest
-</pre>
-                  </p>
+				<ol>
+				  <li>From the Web Console homepage, navigate to your project</li>
+				  <li>Click on Browse &gt; Builds</li>
+				  <li>Click the link with your BuildConfig name</li>
+				  <li>Click the Configuration tab</li>
+				  <li>Click the "Copy to clipboard" icon to the right of the "GitHub webhook URL" field</li>
+				  <li>Navigate to your repository on GitHub and click on repository settings &gt; webhooks &gt; Add webhook</li>
+				  <li>Paste your webhook URL provided by OpenShift</li>
+				  <li>Leave the defaults for the remaining fields &mdash; that's it!</li>
+				</ol>
+				<p>After you save your webhook, if you refresh your settings page you can see the status of the ping that Github sent to OpenShift to verify it can reach the server.</p>
+				<p>Note: adding a webhook requires your OpenShift server to be reachable from GitHub.</p>
 
             </section>
 
